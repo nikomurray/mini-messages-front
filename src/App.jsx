@@ -32,7 +32,7 @@ function App() {
     <AppContext.Provider value={{ setShowForm, messages, setMessages }}>
       <div className="container">
         <Header />
-        <Messages />
+        {messages.length > 1 ? <Messages /> : <h5>Loading messages..</h5>}
         {showForm && <MessageForm ref={formRef} />}
       </div>
     </AppContext.Provider>
